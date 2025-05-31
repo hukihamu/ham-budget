@@ -14,7 +14,7 @@ export default defineConfig({
       autoImport: true,
     })
   ],
-  base: '/ham-heaven-burns-red/',
+  base: '/ham-budget/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
