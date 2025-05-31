@@ -1,0 +1,26 @@
+name: Update TODO
+
+on:
+  schedule:
+    - cron: '0 10 25 * *'
+
+permissions:
+  contents: read
+
+jobs:
+  update-todo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - run: npm ci
+
+      - name: Run update-todo script
+        run: npm run update-todo
