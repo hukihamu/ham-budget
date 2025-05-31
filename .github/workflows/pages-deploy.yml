@@ -2,8 +2,9 @@ name: Pages Deploy
 
 on:
   push:
-    branches:
-      - main  # 対象のブランチに合わせて変更
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
 
 permissions:
   contents: read
